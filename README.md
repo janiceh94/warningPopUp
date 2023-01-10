@@ -1,4 +1,6 @@
 This project was created following Udemy "React-The Complete Guide"
+![Screen Shot 2023-01-10 at 1 38 42 PM](https://user-images.githubusercontent.com/93102224/211667825-c332106a-e846-4b8f-b34f-65c5522caada.png)
+
 
 # Getting Started with Create React App
 
