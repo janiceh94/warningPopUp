@@ -1,7 +1,7 @@
-import Card from "../UI/Card/Card";
+import Card from "../../UI/Card/Card";
 import {useState} from "react";
 import classes from "./AddUser.module.css";
-import Button from "../UI/Button/Button";
+import Button from "../../UI/Button/Button";
 
 export default function AddUser(props){
 
