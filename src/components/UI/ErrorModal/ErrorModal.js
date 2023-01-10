@@ -5,7 +5,10 @@ import Button from "../Button/Button";
 export default function ErrorModla(props){
     return (
         <div>
-            <div className={classes.backdrop}/>
+            <div 
+                className={classes.backdrop}
+                onClick={props.onHandleError}
+            />
             <Card className={classes.modal}>
                 <header className={classes.header}>
                     <h2>{props.title}</h2>
@@ -14,7 +17,7 @@ export default function ErrorModla(props){
                     <p>{props.message}</p>
                 </div>
                 <footer className={classes.actions}>
-                    <Button>Close</Button>
+                    <Button onClick={props.onHandleError}>Close</Button>
                 </footer>
             </Card>
         </div>

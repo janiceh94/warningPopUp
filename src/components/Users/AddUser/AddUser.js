@@ -40,11 +40,16 @@ export default function AddUser(props){
         setEnteredAge("");
     }
 
+    const handleError = () => {
+        setError(null);
+    }
+
     return (
         <div>
             {error && <ErrorModal 
                 title={error.title}
                 message={error.message}
+                onHandleError={handleError}
             />}
             <Card className={classes.input}>
                 <form onSubmit={handleSubmit}>
