@@ -8,6 +8,7 @@ export default function AddUser(props){
 
     const [enteredUsername, setEnteredUsername] = useState("");
     const [enteredAge, setEnteredAge] = useState("");
+    const [error, setError] = useState();
 
     const handleUsername = (e) => {
         setEnteredUsername(e.target.value);
@@ -19,10 +20,18 @@ export default function AddUser(props){
     const handleSubmit = (e) => {
         e.preventDefault();
         if(enteredUsername.trim().length === 0 || enteredAge.trim().length === 0){
+            setError({
+                title: "Invalid Input",
+                message: "Please enter a valid name and age(non-empty values)."
+            })
             return;
         }
         // Force conversion of string into a number by adding +
         if(+enteredAge < 1){
+            setError({
+                title: "Invalid Age",
+                message: "Please enter a valid age(> 0)."
+            })
             return;
         }
         // console.log(enteredUsername, enteredAge)
@@ -33,10 +42,10 @@ export default function AddUser(props){
 
     return (
         <div>
-            <ErrorModal 
-                title="An error occured" 
-                message="Something went wrong"
-            />
+            {error && <ErrorModal 
+                title={error.title}
+                message={error.message}
+            />}
             <Card className={classes.input}>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="username">Username</label>
