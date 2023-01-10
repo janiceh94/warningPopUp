@@ -18,6 +18,8 @@ export default function AddUser(props){
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(enteredUsername, enteredAge)
+        setEnteredUsername("");
+        setEnteredAge("");
     }
 
     return (
@@ -29,12 +31,14 @@ export default function AddUser(props){
                         id="username" 
                         type="text" 
                         onChange={handleUsername}
+                        value={enteredUsername}
                     />
                     <label htmlFor="age">Age (Years)</label>
                     <input 
                         id="age" 
                         type="number" 
                         onChange={handleAge}
+                        value={enteredAge}
                     />
                     <Button type="submit">Add User</Button>
                 </form>
