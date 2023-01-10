@@ -2,6 +2,7 @@ import Card from "../../UI/Card/Card";
 import {useState} from "react";
 import classes from "./AddUser.module.css";
 import Button from "../../UI/Button/Button";
+import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
 export default function AddUser(props){
 
@@ -32,6 +33,10 @@ export default function AddUser(props){
 
     return (
         <div>
+            <ErrorModal 
+                title="An error occured" 
+                message="Something went wrong"
+            />
             <Card className={classes.input}>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="username">Username</label>
